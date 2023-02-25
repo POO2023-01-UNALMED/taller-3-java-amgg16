@@ -20,7 +20,7 @@ public class Control {
     }
      
     public void volumenUp(){
-    	tv.volumenlUp();	
+    	tv.volumenUp();	
     }
     
     public void setCanal(int canal){

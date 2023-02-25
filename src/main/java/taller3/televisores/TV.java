@@ -55,6 +55,14 @@ public class TV {
 		return canal;
 	}
 	
+	public void setnumTV(int num){
+		TV.numTV=num;
+	}
+	
+	public int getnumTV() {
+		return numTV;
+	}
+	
 	public void turnOn() {
 		estado=true;
 		}
@@ -66,7 +74,7 @@ public class TV {
     public boolean getEstado() {
     	return estado;
     }
-   
+    
     public  void canalUp(){
     	if(this.estado==true) {
     		if((canal>=1)&&(canal<=120)) {
@@ -83,7 +91,7 @@ public class TV {
     	}
     }
      
-    public void volumenlUp(){
+    public void volumenUp(){
     	if(this.estado==true) {
     		if((volumen>=0)&&(volumen<=7)) {
     			volumen++;
