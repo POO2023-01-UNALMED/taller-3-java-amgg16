@@ -69,40 +69,38 @@ public class TV {
 	
 	public void turnOn() {
 		estado=true;
-		}
+	}
 		
 	public void turnOff() {
 		estado=false;
 	}
 	
-    public boolean getEstado() {
+	public boolean getEstado() {
     	return estado;
-    }
+        }
     
-    public  void canalUp(){
-    	if((canal>1)&&(canal<120)) {
+        public  void canalUp(){
+		if((canal>1)&&(canal<120)) {
     			canal++;
-    	}
-    }
+    	        }
+        }
     
-    public void canalDown(){
-    	if((canal>1)&&(canal<120)) {
+        public void canalDown(){
+		if((canal>1)&&(canal<120)) {
     			canal--;
     		}
-    	}
-    }
-     
-    public void volumenUp(){
-    	if((volumen>0)&&(volumen<7)) {
-    			volumen++;
         }
-    }
+     
+        public void volumenUp(){
+		if((volumen>0)&&(volumen<7)) {
+    			volumen++;
+                }
+        }
     
-    public void volumenDown(){
-    	if((volumen>0)&&(volumen<7)) {
+        public void volumenDown(){
+		if((volumen>0)&&(volumen<7)) {
     			volumen--;
-    	
-    	}
-    }
+    	        }
+        }
     
 }
