@@ -1,86 +1,110 @@
 package taller3.televisores;
 
-class TV:
-    _numTV = 0
-    
-    def __init__(self, marca, estado):
-        self._marca = marca
-        self._estado = estado
-        self._canal = 1
-        self._volumen = 1
-        self._precio = 500
-        self._control = None
-        TV._numTV += 1
-        
-        
-    def setMarca (self, marca):
-        self._marca = marca
-    
-    def getMarca (self):
-        return self._marca
+public class TV {
+	private Marca marca;
+	private int canal = 1;
+	private int precio = 500;
+	private boolean estado;
+	private int volumen = 1;
+	
+	Control control;
+	
+	private static int numTV;
+	
+	public TV (Marca marca, boolean estado) {
+		this.marca = marca;
+		this.estado = estado;
+		this.numTV++;
+	}
+	
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
+	
+	public Marca getMarca () {
+		return marca;
+	}
+	
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+	
+	public int getPrecio () {
+		return precio;
+	}
+	
+	public void setVolumen(int volumen) {
+		this.volumen = volumen;
+	}
+	
+	public int getVolumen () {
+		return volumen;
+	}
+	
+	public void setCanal(int canal) {
+		if ((canal >= 1 && canal <= 120) && this.estado == true) {
+			this.canal = canal;
+		}
+	}
+	
+	public int getCanal () {
+		return canal;
+	}
+	
+	public static void setNumTV(int numTV) {
+		TV.numTV = numTV;
+	}
+	
+	public static int getNumTV () {
+		return numTV;
+	}
+	
+	public void turnOn () {
+		this.estado = true;
+	}
+	
+	public void turnOff () {
+		this.estado = false;
+	}
 
-    def setControl (self, control):
-        self._control = control
-    
-    def getControl(self):
-        return self._control
-
-    def setPrecio (self, precio):
-        self._precio = precio
-    
-    def getPrecio (self):
-        return self._precio
-
-    def getVolumen (self):
-        return self._volumen
-    
-    def getCanal (self):
-        return self._canal
-    
-    def setCanal (self, canal):
-        if ((canal >= 1 and canal <=120) and (self._estado)):
-            self._canal = canal
-        else:
-            pass
-        
-    @classmethod    
-    def getNumTV(cls):
-        return cls._numTV
-    
-    @classmethod
-    def setNumTV(cls, numTV):
-        cls._numTV = numTV
-    
-    def getEstado(self):
-        return self._estado
-
-    def turnOn(self):
-        self._estado = True
-
-    def turnOff(self):
-        self._estado = False
-
-    def canalUp(self):
-        if (self._estado == True and self._canal<120):
-            self._canal += 1 
-    
-    def canalDown(self):
-        if (self._estado == True and self._canal>1):
-            self._canal -= 1 
-
-    def volumenUp(self):
-        if (self._estado == True and self._volumen<7):
-            self._volumen += 1
-    
-    def volumenDown(self):
-        if (self._estado == True and self._volumen>1):
-            self._volumen -= 1  
-    
+	public boolean getEstado () {
+		return estado;
+	}
+	
+	public void canalUp () {
+		if ((this.estado == true) && (this.canal < 120) ) {
+			this.canal++;
+		}
+	}
+	
+	public void canalDown () {
+		if ((this.estado == true) && (this.canal > 1) ) {
+			this.canal--;
+		}
+	}
+	
+	public void volumenUp () {
+		if ((this.estado == true) && (this.volumen < 7) ) {
+			this.volumen++;
+		}
+	}
+	
+	public void volumenDown () {
+		if ((this.estado == true) && (this.volumen > 1) ) {
+			this.volumen--;
+		}
+	}
+		
+	
+	public void setControl(Control control) {
+		this.control = control;
+	}
+	
+	public Control getControl () {
+		return control;
+	}
+	
+	
 
 
-
-    def setVolumen (self, newVolumen):
-        if (newVolumen <= 7  and newVolumen >= 1):
-            self._volumen = newVolumen
-        else:
-            pass
+}
